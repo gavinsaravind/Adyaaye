@@ -93,7 +93,7 @@ footer a{display:block;padding:4px 0}footer a:hover{color:#fff}footer img{height
 #sl .nn{font:400 12px var(--sans);color:var(--gold);padding-top:34px}#sl .tg{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}#sl h3{font-size:clamp(34px,3.6vw,52px);color:rgba(242,234,219,.5);transition:.5s;font-style:normal}
 #sl li.on h3,#sl li:hover h3{color:#fff;font-style:italic;padding-left:12px}#sl .ds{max-height:0;overflow:hidden;opacity:0;transition:.6s;color:#cdbfa8;margin-top:0;max-width:480px;line-height:1.6}#sl li.on .ds{max-height:130px;opacity:1;margin-top:10px}
 #sl .ct{font-size:13px;color:#b6a98f;padding-top:38px}#sl .ax{padding-top:34px;color:#cdbfa8;transition:.3s}#sl li:hover .ax{color:var(--gold);transform:translate(3px,-3px)}
-.mr{background:var(--mar);color:#f4e8e4;padding:110px 0}.mr h2{color:#fff}.mr .eyebrow{color:var(--gold)}.mr .lead{margin:22px 0 30px;color:#ecd8d3;font-size:18px;max-width:480px}.mr .store img{display:none}
+.mr{background:var(--mar);color:#f4e8e4;padding:110px 0}.mr h2{color:#fff}.mr .eyebrow{color:var(--gold)}.mr .lead{margin:22px 0 30px;color:#ecd8d3;font-size:18px;max-width:480px}
 .mr li{list-style:none;display:flex;gap:16px;align-items:center;padding:12px 0;border:0}.mr li svg{width:22px;height:22px;fill:none;stroke:var(--gold);stroke-width:1.6;flex:none}
 .btn.g{background:var(--gold);border-color:var(--gold);color:#fff}.btn.g:hover{background:#fff;color:var(--mar);border-color:#fff}
 .fr{position:relative;max-width:440px;margin:0 auto;width:100%}.fr::before{content:"";position:absolute;inset:-14px -14px 0;border:1px solid rgba(176,138,78,.7);border-radius:999px 999px 0 0;pointer-events:none}.mr .ar{aspect-ratio:3/4.1}
@@ -177,7 +177,7 @@ const srcs=sg.map(l=>{const p=pick(l);return p&&p.images[0]?img(p.images[0].src,
 const lis=[...document.querySelectorAll('#sl li')];lis.forEach((li,i)=>{li.querySelector('.ct').textContent=sg[i].length?sg[i].length+' pieces':'';if(srcs[i])new Image().src=srcs[i]});
 const sbi=$('#sbi');const show=i=>{lis.forEach((x,k)=>x.classList.toggle('on',k===i));if(!srcs[i])return;sbi.style.opacity=0;setTimeout(()=>{sbi.src=srcs[i];sbi.onload=()=>sbi.style.opacity=1},280)};
 lis.forEach((li,i)=>{li.onmouseenter=()=>show(i)});show(0);
-const sp=pick(bp,/gown|lehenga/i);setAr($('#si'),sp,1100);
+const sp=pick(bp,/gown|lehenga/i)||pick(gp)||pick(all);setAr($('#si'),sp,1100);
 $('#na').innerHTML=`<div class="grid">${all.slice(0,8).map(card).join('')}</div>`;
 }catch(e){$('#na').innerHTML=err()}}
 
@@ -241,6 +241,7 @@ if(m=p.match(/^\/products\/([\w-]+)$/))return product(m[1]);
 if(m=p.match(/^\/pages\/([\w-]+)$/)){if(PAGES[m[1]])return page(m[1]);return listing('', 'Shop Online')}
 app.innerHTML=`<div class="msg"><h2>Page not found</h2><p style="margin:16px 0 26px">The page you are looking for has moved.</p><a class="btn f" href="/">Back home</a></div>`}
 document.addEventListener('click',e=>{const a=e.target.closest('a[href^="/"]');if(!a||a.target||e.metaKey||e.ctrlKey||a.getAttribute('href').startsWith('/assets')||a.getAttribute('href').startsWith('/api'))return;e.preventDefault();history.pushState(0,'',a.getAttribute('href'));route()});
+document.addEventListener('error',e=>{const t=e.target;if(t&&t.tagName==='IMG'&&!t.closest('.logo,footer'))t.style.display='none'},true);
 addEventListener('popstate',route);$('#bg').onclick=()=>$('#mn').classList.toggle('o');route();
 </script>
 </body></html>
