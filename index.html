@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f7f1e8;--card:#fffdf9;--ink:#2b2620;--mute:#7b7061;--gold:#96795c;--line:#e4dac9;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif}
+:root{--bg:#f5f0e6;--card:#fdfaf3;--ink:#2b2620;--mute:#7b7061;--gold:#b08a4e;--mar:#5e1a1f;--line:#e4dac9;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif}
 *{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font:300 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit;cursor:pointer}
@@ -25,8 +25,8 @@ header{position:sticky;top:0;z-index:20;background:rgba(247,241,232,.94);backdro
 .dd{position:relative}.dd .pan{display:none;position:absolute;left:-40px;top:76px;background:var(--card);border:1px solid var(--line);padding:26px 30px;gap:34px;box-shadow:0 20px 50px rgba(60,40,10,.12)}
 .dd:hover .pan{display:flex}.pan div{min-width:170px}.pan h6{font:500 11px var(--sans);letter-spacing:.2em;color:var(--gold);margin-bottom:10px;text-transform:uppercase}
 .pan a{display:block;text-transform:none;letter-spacing:0;font-size:15px;padding:4px 0}
-.wa{background:var(--ink);color:#fff!important;padding:12px 22px!important;border-radius:2px;font-size:12px}
-.wa:hover{background:var(--gold)}.burger{display:none;background:none;border:0;font-size:26px}
+.wa{border:1px solid var(--mar);color:var(--mar)!important;padding:12px 22px!important;font-size:12px;transition:.3s}
+.wa:hover{background:var(--mar);color:#fff!important}.burger{display:none;background:none;border:0;font-size:26px}
 .hero{display:grid;grid-template-columns:1.05fr 1fr;min-height:82vh;border-bottom:1px solid var(--line)}
 .hero .t{display:flex;flex-direction:column;justify-content:center;padding:70px 6vw}
 .eyebrow{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
@@ -68,7 +68,7 @@ select,input{font:inherit;background:var(--card);border:1px solid var(--line);pa
 .pg{max-width:760px;margin:0 auto;padding:30px 28px 110px}.pg p{margin:16px 0;color:#4b4338;font-size:17px}
 footer{background:var(--ink);color:#cfc4b2;padding:70px 0 30px;font-size:14px}.fg{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}footer h5{font:500 12px var(--sans);letter-spacing:.2em;color:#fff;text-transform:uppercase;margin-bottom:14px}
 footer a{display:block;padding:4px 0}footer a:hover{color:#fff}footer img{height:60px;filter:brightness(0) invert(.8);margin-bottom:14px}.cp{border-top:1px solid #4a4338;margin-top:44px;padding-top:22px;font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-.fab{position:fixed;right:22px;bottom:22px;z-index:30;background:#25d366;color:#fff;border-radius:50px;padding:14px 22px;font-size:14px;box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.fab{position:fixed;right:22px;bottom:22px;z-index:30;width:62px;height:62px;border-radius:50%;background:#1f7a4a;color:#fff;display:grid;place-items:center;box-shadow:0 8px 30px rgba(0,0,0,.28);font-size:0}.fab svg{width:28px;height:28px;fill:none;stroke:#fff;stroke-width:1.8}.fab::before{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid #1f7a4a;animation:pu 2.2s infinite}@keyframes pu{from{transform:scale(1);opacity:.7}to{transform:scale(1.55);opacity:0}}
 .msg{text-align:center;padding:90px 0;color:var(--mute)}.sk{aspect-ratio:3/4;background:linear-gradient(90deg,#ece3d3,#f4ede0,#ece3d3);background-size:200%;animation:sh 1.4s infinite}@keyframes sh{to{background-position:-200%}}
 .more{text-align:center;margin-top:50px}
 .rv{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}.rv.in{opacity:1;transform:none}
@@ -85,11 +85,23 @@ footer a{display:block;padding:4px 0}footer a:hover{color:#fff}footer img{height
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:46px 0}.stats b{display:block;font:500 clamp(40px,5vw,64px)/1 var(--serif);color:var(--gold)}.stats span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
 .qt{max-width:860px;margin:0 auto;text-align:center}.qt blockquote{font:italic 400 clamp(26px,3.4vw,42px)/1.3 var(--serif)}.qt cite{display:block;margin-top:22px;font:400 12px var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-style:normal}
 .tile img,.card img{object-position:center 12%}.gal .main img,.gal .th img{object-position:center top}.tile::after{content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.0);transition:.5s;pointer-events:none}.tile:hover::after{border-color:rgba(255,255,255,.7)}
+.ar{position:relative;border-radius:999px 999px 0 0;overflow:hidden;background:#e4d6c4;aspect-ratio:3/4}.ar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 12%;transition:transform 1.2s cubic-bezier(.2,.7,.2,1),opacity .5s}
+.at{display:block}.at:hover .ar img{transform:scale(1.06)}.at small{display:block;margin-top:20px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}.at h3{font-size:clamp(26px,2.6vw,36px);margin:6px 0 2px;transition:color .3s}.at:hover h3{color:var(--mar)}.at p{font-size:13px;color:var(--mute)}
+.two .ar{aspect-ratio:4/5}.occ{align-items:start}.occ .at:nth-child(even){margin-top:64px}#cl .at:nth-child(even){margin-top:64px}
+.dk{background:#1f1714;color:#f2eadb;padding:120px 0}.dk h2{color:#fff;max-width:520px;margin-top:6px}.dkg{display:grid;grid-template-columns:1fr 1.25fr;gap:90px;align-items:end}.dk .ar{aspect-ratio:4/5;max-width:470px}
+.dk .fr::before{display:none}#sl{list-style:none;padding:0}#sl li{border-bottom:1px solid rgba(255,255,255,.14)}#sl li:first-child{border-top:1px solid rgba(255,255,255,.14)}#sl a{display:grid;grid-template-columns:44px 1fr auto 24px;gap:14px;align-items:start;padding:28px 0}
+#sl .nn{font:400 12px var(--sans);color:var(--gold);padding-top:34px}#sl .tg{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}#sl h3{font-size:clamp(34px,3.6vw,52px);color:rgba(242,234,219,.5);transition:.5s;font-style:normal}
+#sl li.on h3,#sl li:hover h3{color:#fff;font-style:italic;padding-left:12px}#sl .ds{max-height:0;overflow:hidden;opacity:0;transition:.6s;color:#cdbfa8;margin-top:0;max-width:480px;line-height:1.6}#sl li.on .ds{max-height:130px;opacity:1;margin-top:10px}
+#sl .ct{font-size:13px;color:#b6a98f;padding-top:38px}#sl .ax{padding-top:34px;color:#cdbfa8;transition:.3s}#sl li:hover .ax{color:var(--gold);transform:translate(3px,-3px)}
+.mr{background:var(--mar);color:#f4e8e4;padding:110px 0}.mr h2{color:#fff}.mr .eyebrow{color:var(--gold)}.mr .lead{margin:22px 0 30px;color:#ecd8d3;font-size:18px;max-width:480px}.mr .store img{display:none}
+.mr li{list-style:none;display:flex;gap:16px;align-items:center;padding:12px 0;border:0}.mr li svg{width:22px;height:22px;fill:none;stroke:var(--gold);stroke-width:1.6;flex:none}
+.btn.g{background:var(--gold);border-color:var(--gold);color:#fff}.btn.g:hover{background:#fff;color:var(--mar);border-color:#fff}
+.fr{position:relative;max-width:440px;margin:0 auto;width:100%}.fr::before{content:"";position:absolute;inset:-14px -14px 0;border:1px solid rgba(176,138,78,.7);border-radius:999px 999px 0 0;pointer-events:none}.mr .ar{aspect-ratio:3/4.1}
 .mq{overflow:hidden;background:var(--ink);color:#d9c9ad;padding:18px 0;font:italic 400 26px var(--serif);white-space:nowrap}.mq div{display:inline-block;animation:mq 32s linear infinite}.mq span{margin:0 26px}
 header.sm .nav{height:62px}header.sm .logo img{height:42px}.nav,.logo img{transition:.35s}
 .btn,.chip,.sz{transition:.3s}.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(60,40,10,.18)}.card:hover h4{color:var(--gold)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
-@media(max-width:960px){.stats{grid-template-columns:1fr 1fr}.vh{height:calc(100vh - 100px)}.menu{display:none;position:absolute;top:76px;left:0;right:0;background:var(--bg);flex-direction:column;align-items:stretch;gap:0;padding:10px 28px 24px;border-bottom:1px solid var(--line)}.menu.o{display:flex}.menu>a,.dd>span{padding:14px 0}.dd .pan{display:block;position:static;border:0;box-shadow:none;padding:0 0 8px}.dd .pan div{margin-bottom:10px}.burger{display:block}
+@media(max-width:960px){.dkg{grid-template-columns:1fr;gap:50px}.occ .at:nth-child(even),#cl .at:nth-child(even){margin-top:34px}#sl a{grid-template-columns:34px 1fr 24px}#sl .ct{display:none}.stats{grid-template-columns:1fr 1fr}.vh{height:calc(100vh - 100px)}.menu{display:none;position:absolute;top:76px;left:0;right:0;background:var(--bg);flex-direction:column;align-items:stretch;gap:0;padding:10px 28px 24px;border-bottom:1px solid var(--line)}.menu.o{display:flex}.menu>a,.dd>span{padding:14px 0}.dd .pan{display:block;position:static;border:0;box-shadow:none;padding:0 0 8px}.dd .pan div{margin-bottom:10px}.burger{display:block}
 .hero,.pd,.store,.two{grid-template-columns:1fr}.hero .i{min-height:60vh;order:-1}.grid,.occ{grid-template-columns:repeat(2,1fr);gap:22px 12px}.steps{grid-template-columns:1fr 1fr}.fg{grid-template-columns:1fr 1fr}.gal{position:static;grid-template-columns:1fr}.gal .th{flex-direction:row;order:2}.gal .th img{width:64px}.w{padding:0 18px}section.s{padding:64px 0}.store{gap:34px}}
 </style>
 </head>
@@ -114,7 +126,7 @@ header.sm .nav{height:62px}header.sm .logo img{height:42px}.nav,.logo img{transi
 <div><h5>Brand</h5><a href="/pages/about-us">About Us</a><a href="/pages/contact-us">Contact Us</a><a href="/pages/our-store">Our Store</a><a href="https://adyaaye.com/pages/faq">FAQs</a><a href="https://adyaaye.com/blogs/adyaaye-blogs">Blogs</a></div>
 <div><h5>Follow &amp; Policies</h5><a href="https://www.instagram.com/adyaaye_official/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/people/Adyaaye/61568404980088/" target="_blank" rel="noopener">Facebook</a><a href="https://in.pinterest.com/adyaaye_official/" target="_blank" rel="noopener">Pinterest</a><a href="https://adyaaye.com/policies/shipping-policy">Shipping Policy</a><a href="https://adyaaye.com/policies/refund-policy">Return &amp; Exchange</a><a href="https://adyaaye.com/policies/privacy-policy">Privacy</a><a href="https://adyaaye.com/policies/terms-of-service">Terms</a></div>
 </div><div class="cp"><span>© 2026 Adyaaye. All rights reserved.</span><span>Heritage wedding couture · Hyderabad</span></div></div></footer>
-<a class="fab" target="_blank" rel="noopener" href="https://wa.me/918143541515?text=Hello%20Adyaaye%2C%20I%27m%20interested%20in%20exploring%20your%20products.">Ask a stylist</a>
+<a class="fab" target="_blank" rel="noopener" href="https://wa.me/918143541515?text=Hello%20Adyaaye%2C%20I%27m%20interested%20in%20exploring%20your%20products." aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg></a>
 <script>
 const $=s=>document.querySelector(s),app=$('#app'),WA='918143541515';
 const COLS=[['groom-couture','Groom Couture','For Him'],['bridal-couture','Bridal Couture','For Her'],['pre-wedding-ceremony','Pre-Wedding Ceremony','Haldi · Mehendi · Sangeet'],['engagement','Engagement','The First Promise'],['cocktail-evening','Cocktail Evening','After Dark'],['reception-ceremony','Reception Ceremony','The Grand Finale'],['rangrez','Rangrez','The Art of Colour']];
@@ -136,34 +148,45 @@ const sk=n=>`<div class="grid">${'<div><div class="sk"></div></div>'.repeat(n)}<
 const err=()=>`<div class="msg"><h2>We couldn’t load the collection</h2><p style="margin:14px 0 24px">Please check your connection and try again.</p><a class="btn f" href="">Retry</a></div>`;
 function meta(t,d){document.title=t+' | Adyaaye';if(d)document.querySelector('meta[name=description]').content=d}
 
+const SIGD=[['rangrez','Rangrez','The Art of Colour','A celebration of colour in its most expressive form, inspired by the timeless art of Indian dyeing, where every shade carries emotion, depth and memory.'],['laal-ishq','Laal Ishq','The Language of Red',''],['shauq','Shauq','The Joy of Dressing Up',''],['chand','Chand','Inspired by Moonlight',''],['urudhi','Urudhi','An Expression of Strength',''],['chaap','Chaap','The Art of Imprint','']];
+const at=(h,n,s)=>`<a class="at" href="/collections/${h}"><div class="ar"></div><small>${s}</small><h3>${n}</h3><p></p></a>`;
+const setAr=(el,p,w)=>{if(el&&p&&p.images[0])el.insertAdjacentHTML('afterbegin',`<img loading="lazy" src="${img(p.images[0].src,w||1000)}" alt="${esc(p.title)}">`)};
+const getC=h=>api(`/collections/${h}/products.json`).then(d=>d.products).catch(()=>[]);
+async function getAny(h){let l=await getC(h);if(l.length)return l;const hs=[h+'-women',h+'-men'];if(h==='chand')hs.unshift('chaand');for(const x of hs)l=l.concat(await getC(x));return l}
 async function home(){
 meta('Timeless Wedding Couture');
 app.innerHTML=`<section class="vh"><div class="bg" id="hi"></div><video id="hv" muted loop playsinline autoplay preload="auto"></video><div class="ov"></div><div class="vc"><div class="eyebrow" style="color:#ead9b9">Banjara Hills · Hyderabad</div><h1>Couture for the ceremonies that become memory.</h1><p>Hand-embroidered sherwanis, bridal lehengas and ceremony wear, crafted from India’s heritage textiles with modern craftsmanship.</p><div><a class="btn f2" href="/pages/shop-online">Shop Online</a><a class="btn w2" href="/pages/our-store">Visit Our Store</a><a class="btn w2" href="/pages/about-us">About Us</a></div></div><button class="mt" id="mt" hidden>Unmute</button><div class="scr"></div></section><div class="mq"><div>${[...SIG.map(x=>x[1]),...SIG.map(x=>x[1]),...SIG.map(x=>x[1]),...SIG.map(x=>x[1])].map(n=>`<span>${n} ✦</span>`).join("")}</div></div>
-<section class="s"><div class="w"><div class="head"><div class="eyebrow">Shop by wardrobe</div><h2>Groom &amp; Bridal Couture</h2></div><div class="two"><a class="tile" href="/collections/groom-couture" id="t1"><div class="c"><small>For Him</small><h3>Groom Couture</h3></div></a><a class="tile" href="/collections/bridal-couture" id="t2"><div class="c"><small>For Her</small><h3>Bridal Couture</h3></div></a></div></div></section>
-<section class="s" style="background:var(--card)"><div class="w"><div class="head"><div class="eyebrow">Dress by occasion</div><h2>A look for every ceremony</h2></div><div class="occ" id="oc"></div></div></section>
-<section class="s"><div class="w"><div class="head"><div class="eyebrow">Signature collections</div><h2>Six stories, told in thread and colour</h2></div><div class="chips" style="justify-content:center">${SIG.map(([h,n])=>`<a class="chip" href="/collections/${h}">${n}</a>`).join('')}</div></div></section>
+<section class="s"><div class="w"><div class="head"><div class="eyebrow">Shop by wardrobe</div><h2>Groom &amp; Bridal Couture</h2></div><div class="two" id="gb">${at('groom-couture','Groom Couture','For Him')}${at('bridal-couture','Bridal Couture','For Her')}</div></div></section>
+<section class="s" style="background:var(--card)"><div class="w"><div class="head"><div class="eyebrow">Dress by occasion</div><h2>A look for every ceremony</h2></div><div class="occ" id="oc">${COLS.slice(2,6).map(([h,n,s])=>at(h,n,s)).join('')}</div></div></section>
+<section class="dk"><div class="w dkg"><div><div class="eyebrow">Signature collections</div><h2>Six stories, told in thread and colour</h2><div class="fr" style="margin-top:56px"><div class="ar" id="sb"><img id="sbi" alt="" style="opacity:0"></div></div></div><ul id="sl">${SIGD.map(([h,n,t,d],i)=>`<li class="${i?'':'on'}" data-i="${i}"><a href="/collections/${h}"><span class="nn">0${i+1}</span><div><div class="tg">${t}</div><h3>${n}</h3><p class="ds">${d}</p></div><span class="ct"></span><span class="ax">↗</span></a></li>`).join('')}</ul></div></section>
 <section class="s" style="background:var(--card)"><div class="w"><div class="head"><div class="eyebrow">New arrivals</div><h2>Fresh from the atelier</h2></div><div id="na">${sk(4)}</div><div class="more"><a class="btn" href="/shop">Shop all</a></div></div></section>
 <section class="s"><div class="w"><div class="qt"><div class="eyebrow">From the Adyaaye Atelier</div><blockquote>“The most beautiful outfit is the one that fits the day: the heat, the rituals, the hours of standing, the photographs.”</blockquote><cite>Founder &amp; Head Couturier</cite></div><div class="stats" style="margin-top:70px"><div><b>100+</b><span>Ensembles</span></div><div><b>6</b><span>Signature collections</span></div><div><b>30–45</b><span>Days of hand-crafting</span></div><div><b>38–50</b><span>Sizes, made to fit</span></div></div></div></section>
 <section class="s" style="padding-top:0"><div class="w"><div class="head"><div class="eyebrow">How ordering works</div><h2>Personal service, one message away</h2></div><div class="steps">${[['Choose your look','Browse and pick your size, or ask us to help you choose.'],['Order on WhatsApp','One tap sends us the product and size. A stylist replies personally.'],['Confirm fit &amp; date','We confirm measurements, components and delivery against your function date.'],['Crafted for you','Hand-finished by our karigars in 30–45 days.']].map((s,i)=>`<div><b>0${i+1}</b><h3 style="font-size:26px;margin:6px 0">${s[0]}</h3><p style="color:var(--mute)">${s[1]}</p></div>`).join('')}</div></div></section>
-<section class="s" style="background:var(--card)"><div class="w store"><div><div class="eyebrow">The Adyaaye Atelier</div><h2>Visit our flagship store in Banjara Hills</h2><p style="margin:20px 0;color:var(--mute)">Our team will guide you through styles, fabrics and fittings, and help you discover ensembles suited to every one of your special moments.</p><ul><li>Gouri Shankar Nagar Colony, Banjara Hills, Hyderabad, Telangana 500034</li><li>10:00 AM – 9:30 PM, all days</li><li>+91 80741 19291</li></ul><p style="margin-top:26px"><a class="btn f" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=Hello%20Adyaaye%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20your%20Banjara%20Hills%20store.">Book an Appointment</a><a class="btn" target="_blank" rel="noopener" href="https://maps.google.com/?q=Adyaaye%20Banjara%20Hills%20Hyderabad">Get Directions</a></p></div><img id="si" alt="Adyaaye atelier"></div></section>`;
-$('#oc').innerHTML=COLS.slice(2,6).map(([h,n,s])=>`<a class="tile" href="/collections/${h}"><div class="c"><small>${s}</small><h3>${n}</h3></div></a>`).join('');
+<section class="mr"><div class="w store"><div><div class="eyebrow">The Adyaaye Atelier</div><h2>Visit our flagship store in Banjara Hills</h2><p class="lead">Step into the world of Adyaaye. Our team will guide you through styles, fabrics and fittings, and help you discover ensembles suited to every one of your special moments.</p><ul><li><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>Gouri Shankar Nagar Colony, Banjara Hills, Hyderabad, Telangana 500034</li><li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>10:00 AM – 9:30 PM, all days</li><li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>+91 80741 19291</li></ul><p style="margin-top:30px"><a class="btn g" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=Hello%20Adyaaye%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20your%20Banjara%20Hills%20store.">Book an Appointment</a><a class="btn w2" target="_blank" rel="noopener" href="https://maps.google.com/?q=Adyaaye%20Banjara%20Hills%20Hyderabad">Get Directions</a></p></div><div class="fr"><div class="ar" id="si"></div></div></div></section>`;
 fetch('/api/home').then(r=>r.json()).then(d=>{const u=(innerWidth<800&&d.mobile)||d.desktop;if(!u)return;const v=$('#hv');v.src=u;v.oncanplay=()=>{v.classList.add('on');v.play().catch(()=>{});const m=$('#mt');m.hidden=false;m.onclick=()=>{v.muted=!v.muted;m.textContent=v.muted?'Unmute':'Mute'}};v.onerror=()=>v.remove()}).catch(()=>{});
 try{
-const [g,b,n]=await Promise.all([api('/collections/groom-couture/products.json'),api('/collections/bridal-couture/products.json'),api('/products.json')]);
-const set=(el,p)=>{if(p&&p.images[0]){const i=new Image();i.src=img(p.images[0].src,1200);i.alt=p.title;el.prepend(i)}};
-const gp=g.products,bp=b.products;set($('#t1'),gp[0]);set($('#t2'),bp[0]);
-const hp=gp.find(x=>/sherwani|achkan/i.test(x.title))||gp[0];$('#hi').style.backgroundImage=`url(${img(hp.images[0].src,1800)})`;
-if(n.products[4]&&n.products[4].images[0])$('#si').src=img(n.products[4].images[0].src,800);
-$('#na').innerHTML=`<div class="grid">${n.products.slice(0,8).map(card).join('')}</div>`;
-const oc=await Promise.all(COLS.slice(2,6).map(c=>api(`/collections/${c[0]}/products.json`).catch(()=>null)));
-document.querySelectorAll('#oc .tile').forEach((t,i)=>set(t,oc[i]&&oc[i].products[0]));
+const R=await Promise.all([getC('groom-couture'),getC('bridal-couture'),...COLS.slice(2,6).map(c=>getAny(c[0])),...SIGD.map(c=>getAny(c[0])),api('/products.json').then(d=>d.products).catch(()=>[])]);
+const [gp,bp]=R,oc=R.slice(2,6),sg=R.slice(6,12),all=R[12];
+const used=new Set();
+const pick=(l,re)=>{const ok=x=>x.images[0]&&!used.has(x.images[0].src);const p=(re&&l.find(x=>re.test(x.title)&&ok(x)))||l.find(ok)||l[0];if(p&&p.images[0])used.add(p.images[0].src);return p};
+const hp=pick(gp,/sherwani|achkan/i);if(hp)$('#hi').style.backgroundImage=`url(${img(hp.images[0].src,1800)})`;
+const fill=(el,l,txt,re)=>{setAr(el.querySelector('.ar'),pick(l,re),1100);el.querySelector('p').textContent=l.length?l.length+' '+txt:''};
+const gb=document.querySelectorAll('#gb .at');fill(gb[0],gp,'handcrafted ensembles',/sherwani/i);fill(gb[1],bp,'handcrafted ensembles',/lehenga/i);
+document.querySelectorAll('#oc .at').forEach((t,i)=>fill(t,oc[i],'pieces'));
+const srcs=sg.map(l=>{const p=pick(l);return p&&p.images[0]?img(p.images[0].src,1100):''});
+const lis=[...document.querySelectorAll('#sl li')];lis.forEach((li,i)=>{li.querySelector('.ct').textContent=sg[i].length?sg[i].length+' pieces':'';if(srcs[i])new Image().src=srcs[i]});
+const sbi=$('#sbi');const show=i=>{lis.forEach((x,k)=>x.classList.toggle('on',k===i));if(!srcs[i])return;sbi.style.opacity=0;setTimeout(()=>{sbi.src=srcs[i];sbi.onload=()=>sbi.style.opacity=1},280)};
+lis.forEach((li,i)=>{li.onmouseenter=()=>show(i)});show(0);
+const sp=pick(bp,/gown|lehenga/i);setAr($('#si'),sp,1100);
+$('#na').innerHTML=`<div class="grid">${all.slice(0,8).map(card).join('')}</div>`;
 }catch(e){$('#na').innerHTML=err()}}
 
 async function listing(handle,title){
 const isShop=!handle;title=title||(handle?cap(handle):'All Products');meta(title);
 app.innerHTML=`<div class="ph"><div class="eyebrow">Adyaaye</div><h1>${esc(title)}</h1></div><div class="w"><div id="lw">${sk(8)}</div></div>`;
 try{
-const all=await allOf(handle?`/collections/${handle}/products.json`:'/products.json');
+let all=await allOf(handle?`/collections/${handle}/products.json`:'/products.json').catch(e=>{if(!handle)throw e;return[]});
+if(!all.length&&handle){const hs=[handle+'-women',handle+'-men'];if(handle==='chand')hs.unshift('chaand');for(const x of hs)all=all.concat(await allOf(`/collections/${x}/products.json`).catch(()=>[]))}
 if(!all.length){$('#lw').innerHTML=`<div class="msg"><p>No products found in this collection yet.</p><p style="margin-top:20px"><a class="btn f" href="/shop">Browse all</a></p></div>`;return}
 const types=[...new Set(all.map(p=>p.product_type).filter(Boolean))];let t='',sort='';
 const draw=()=>{let l=all.filter(p=>!t||p.product_type===t);
@@ -173,8 +196,8 @@ document.querySelectorAll('.chip[data-t]').forEach(b=>b.onclick=()=>{t=b.dataset
 draw()}catch(e){$('#lw').innerHTML=err()}}
 
 async function collections(){meta('Collections');
-app.innerHTML=`<div class="ph"><div class="eyebrow">Adyaaye</div><h1>Collections</h1></div><section class="s"><div class="w"><div class="occ" id="cl" style="grid-template-columns:repeat(4,1fr)">${COLS.map(([h,n,s])=>`<a class="tile" href="/collections/${h}"><div class="c"><small>${s}</small><h3>${n}</h3></div></a>`).join('')}</div><div class="head" style="margin:60px 0 20px"><h2>Signature stories</h2></div><div class="chips" style="justify-content:center">${SIG.map(([h,n])=>`<a class="chip" href="/collections/${h}">${n}</a>`).join('')}<a class="chip" href="/collections/new-arrivals">New Arrivals</a><a class="chip" href="/collections/ready-to-ship">Ready to Ship</a></div></div></section>`;
-COLS.forEach(async([h],i)=>{try{const d=await api(`/collections/${h}/products.json`);const p=d.products[0];if(p)document.querySelectorAll('#cl .tile')[i].insertAdjacentHTML('afterbegin',`<img loading="lazy" src="${img(p.images[0].src,700)}" alt="">`)}catch(e){}})}
+app.innerHTML=`<div class="ph"><div class="eyebrow">Adyaaye</div><h1>Collections</h1></div><section class="s"><div class="w"><div class="occ" id="cl" style="grid-template-columns:repeat(4,1fr)">${COLS.map(([h,n,s])=>at(h,n,s)).join('')}</div><div class="head" style="margin:70px 0 20px"><h2>Signature stories</h2></div><div class="chips" style="justify-content:center">${SIG.map(([h,n])=>`<a class="chip" href="/collections/${h}">${n}</a>`).join('')}<a class="chip" href="/collections/new-arrivals">New Arrivals</a><a class="chip" href="/collections/ready-to-ship">Ready to Ship</a></div></div></section>`;
+const used=new Set();document.querySelectorAll('#cl .at').forEach(async(t,i)=>{const l=await getAny(COLS[i][0]);const p=l.find(x=>x.images[0]&&!used.has(x.images[0].src))||l[0];if(p){used.add(p.images[0].src);setAr(t.querySelector('.ar'),p,900)}t.querySelector('p').textContent=l.length?l.length+' pieces':''})}
 
 async function product(handle){
 app.innerHTML=`<div class="w"><div class="pd" style="padding-top:50px"><div class="sk"></div><div></div></div></div>`;
@@ -204,7 +227,7 @@ const PAGES={
 function page(k){const d=PAGES[k];meta(d[0]);app.innerHTML=`<div class="ph"><div class="eyebrow">Adyaaye</div><h1>${d[0]}</h1></div><div class="pg"><h3 style="font-size:30px;text-align:center;margin-bottom:10px">${d[1]}</h3>${d[2]}</div>`}
 
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.06});
-function rv(){app.querySelectorAll('.card,.tile,.head,.steps>div,.store>*,.perks div,.chip,.tools').forEach((el,i)=>{if(el.dataset.rv)return;el.dataset.rv=1;el.classList.add('rv');el.style.transitionDelay=(i%4)*90+'ms';io.observe(el)})}
+function rv(){app.querySelectorAll('.card,.at,.dk li,.head,.steps>div,.store>*,.perks div,.chip,.tools,.qt,.stats').forEach((el,i)=>{if(el.dataset.rv)return;el.dataset.rv=1;el.classList.add('rv');el.style.transitionDelay=(i%4)*90+'ms';io.observe(el)})}
 new MutationObserver(rv).observe(app,{childList:true,subtree:true});
 addEventListener('scroll',()=>document.querySelector('header').classList.toggle('sm',scrollY>40),{passive:true});
 function route(){window.scrollTo(0,0);
